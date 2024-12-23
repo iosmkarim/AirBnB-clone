@@ -1,0 +1,32 @@
+//
+//  ListingImageCarouselView.swift
+//  AirBnB
+//
+//  Created by Md Rezaul Karim on 12/23/24.
+//
+
+import SwiftUI
+
+struct ListingImageCarouselView: View {
+    
+    var images = [
+    "listing-1",
+    "listing-2",
+    "listing-3",
+    "listing-4"
+    ]
+    var body: some View {
+        TabView {
+            ForEach(images, id:\.self) { image in
+                Image(image)
+                    .resizable()
+                    .scaledToFit()
+            }
+        }
+        .tabViewStyle(.page)
+    }
+}
+
+#Preview {
+    ListingImageCarouselView()
+}
